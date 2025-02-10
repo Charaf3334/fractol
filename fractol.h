@@ -6,7 +6,7 @@
 /*   By: ctoujana <ctoujana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 10:23:51 by ctoujana          #+#    #+#             */
-/*   Updated: 2025/02/10 16:46:19 by ctoujana         ###   ########.fr       */
+/*   Updated: 2025/02/10 17:08:07 by ctoujana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <mlx.h>
-# include <stdio.h>
 
 # define WIDTH 600
 # define HEIGHT 600
