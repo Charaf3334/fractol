@@ -6,7 +6,7 @@
 /*   By: ctoujana <ctoujana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 11:30:28 by ctoujana          #+#    #+#             */
-/*   Updated: 2025/02/10 11:57:39 by ctoujana         ###   ########.fr       */
+/*   Updated: 2025/02/10 17:04:07 by ctoujana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,14 @@ int	mouse_hook(int button, int x, int y, t_mlx *mlx)
 	mlx_destroy_image(mlx->mlx, mlx->img);
 	mlx->img = mlx_new_image(mlx->mlx, WIDTH, HEIGHT);
 	if (!mlx->img)
-		return (1);
+		return (mlx_destroy_window(mlx->mlx, mlx->win),
+			mlx_destroy_display(mlx->mlx), free(mlx->mlx), 1);
 	mlx->addr = mlx_get_data_addr(mlx->img, &mlx->bits_per_pixel,
 			&mlx->line_length, &mlx->endian);
+	if (!mlx->addr)
+		return (mlx_destroy_image(mlx->mlx, mlx->img),
+			mlx_destroy_window(mlx->mlx, mlx->win),
+			mlx_destroy_display(mlx->mlx), free(mlx->mlx), 1);
 	if (mlx->choice == 1)
 		rendering(mlx, 1);
 	else if (mlx->choice == 2)
