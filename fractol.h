@@ -6,7 +6,7 @@
 /*   By: ctoujana <ctoujana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 10:23:51 by ctoujana          #+#    #+#             */
-/*   Updated: 2025/02/10 17:08:07 by ctoujana         ###   ########.fr       */
+/*   Updated: 2025/02/10 17:09:02 by ctoujana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include <unistd.h>
 # include <mlx.h>
 
-# define WIDTH 600
-# define HEIGHT 600
+# define WIDTH 800
+# define HEIGHT 800
 
 typedef struct s_mlx
 {

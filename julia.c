@@ -6,7 +6,7 @@
 /*   By: ctoujana <ctoujana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 15:26:16 by ctoujana          #+#    #+#             */
-/*   Updated: 2025/02/10 16:33:01 by ctoujana         ###   ########.fr       */
+/*   Updated: 2025/02/10 17:14:00 by ctoujana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	iterate_julia(double real, double imag, double re, double im)
 	z_real = real;
 	z_imag = imag;
 	i = 0;
-	while (i <= 100)
+	while (i < 100)
 	{
 		tmp = (z_real * z_real) - (z_imag * z_imag) + re;
 		z_imag = 2 * z_real * z_imag + im;
