@@ -6,7 +6,7 @@
 /*   By: ctoujana <ctoujana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 11:48:39 by ctoujana          #+#    #+#             */
-/*   Updated: 2025/02/10 11:25:06 by ctoujana         ###   ########.fr       */
+/*   Updated: 2025/02/11 13:05:26 by ctoujana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,25 +28,23 @@ int	iterate_mandelbrot(double real, double imag, int iterations)
 		z_imag = 2 * z_real * z_imag + imag;
 		z_real = tmp;
 		if ((z_real * z_real) + (z_imag * z_imag) > 4)
-			return (iterations - i);
+			break ;
 		i++;
 	}
-	return (0);
+	return (i);
 }
 
-static	int	color_(int iteration, int max_iter)
+static int	color_(int iteration, int max_iter)
 {
-	double	t;
-	int		r;
-	int		g;
-	int		b;
+	int	r;
+	int	g;
+	int	b;
 
-	if (iteration == 100)
+	if (iteration == max_iter)
 		return (0x000000);
-	t = (double)iteration / max_iter;
-	r = (int)(9 * (1 - t) * (t * t * t) * 255);
-	g = (int)(15 * (1 - t) * (1 - t) * (t * t) * 255);
-	b = (int)(8.5 * (1 - t) * (1 - t) * (1 - t) * t * 255);
+	r = (iteration * 8) % 256;
+	g = (iteration * 2) % 256;
+	b = (iteration * 4) % 256;
 	return (r << 16 | g << 8 | b);
 }
 

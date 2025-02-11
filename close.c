@@ -6,7 +6,7 @@
 /*   By: ctoujana <ctoujana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 11:12:43 by ctoujana          #+#    #+#             */
-/*   Updated: 2025/02/10 15:38:37 by ctoujana         ###   ########.fr       */
+/*   Updated: 2025/02/11 14:29:43 by ctoujana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	check_dots(char *str)
 
 void	close_handle(t_mlx *mlx)
 {
-	mlx_hook(mlx->win, 2, 1L << 0, close_window_esc, mlx);
+	mlx_hook(mlx->win, 2, 1, close_window_esc, mlx);
 	mlx_hook(mlx->win, 17, 0, close_window_x, mlx);
 }
 
